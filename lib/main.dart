@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:siakad/pages/sign_in.dart';
+import 'package:siakad/pages/home/main_page.dart';
+import 'package:siakad/pages/sign_in_page.dart';
 import 'package:siakad/pages/splash_page.dart';
 
 void main() => runApp(MyApp());
@@ -12,6 +13,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => SplashPage(),
         '/sign-in': (context) => SignInPage(),
+        '/home': (context) => MainPage(),
       },
     );
   }
