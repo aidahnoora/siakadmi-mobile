@@ -55,7 +55,7 @@ class _MainPageState extends State<MainPage> {
                   bottom: 10,
                 ),
                 child: Image.asset(
-                  'assets/icon_chat.png',
+                  'assets/calendar.png',
                   width: 20,
                   color: currentIndex == 1 ? primaryColor : Color(0xff808191),
                 ),
@@ -69,7 +69,7 @@ class _MainPageState extends State<MainPage> {
                   bottom: 10,
                 ),
                 child: Image.asset(
-                  'assets/icon_chat.png',
+                  'assets/trophy.png',
                   width: 20,
                   color: currentIndex == 2 ? primaryColor : Color(0xff808191),
                 ),
@@ -83,7 +83,7 @@ class _MainPageState extends State<MainPage> {
                   bottom: 10,
                 ),
                 child: Image.asset(
-                  'assets/icon_wishlist.png',
+                  'assets/doorbell.png',
                   width: 20,
                   color: currentIndex == 3 ? primaryColor : Color(0xff808191),
                 ),
@@ -132,7 +132,7 @@ class _MainPageState extends State<MainPage> {
     }
 
     return Scaffold(
-      backgroundColor: backgroundColor1,
+      backgroundColor: currentIndex == 0 ? backgroundColor1 : backgroundColor3,
       bottomNavigationBar: customButtonNav(),
       body: body(),
     );

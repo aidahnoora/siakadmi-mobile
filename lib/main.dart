@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:siakad/pages/home/main_page.dart';
+// import 'package:siakad/pages/home/profile_page.dart';
 import 'package:siakad/pages/sign_in_page.dart';
 import 'package:siakad/pages/splash_page.dart';
 
@@ -14,6 +15,7 @@ class MyApp extends StatelessWidget {
         '/': (context) => SplashPage(),
         '/sign-in': (context) => SignInPage(),
         '/home': (context) => MainPage(),
+        // '/profile': (context) => ProfilePage(),
       },
     );
   }
