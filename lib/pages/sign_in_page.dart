@@ -22,7 +22,7 @@ class SignInPage extends StatelessWidget {
               height: 2,
             ),
             Text(
-              'Sign In to Continue',
+              'Log In untuk Melanjutkan',
               style: subtitleTextStyle,
             ),
           ],
@@ -37,7 +37,7 @@ class SignInPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Email Address',
+              'Email',
               style: primaryTextStyle.copyWith(
                 fontSize: 16,
                 fontWeight: medium,
@@ -52,7 +52,7 @@ class SignInPage extends StatelessWidget {
                 horizontal: 16,
               ),
               decoration: BoxDecoration(
-                color: backgroundColor2,
+                color: blackColor,
                 borderRadius: BorderRadius.circular(12),
               ),
               child: Center(
@@ -69,7 +69,7 @@ class SignInPage extends StatelessWidget {
                       child: TextFormField(
                         style: primaryTextStyle,
                         decoration: InputDecoration.collapsed(
-                          hintText: 'Your Email Address',
+                          hintText: 'Masukkan Email',
                           hintStyle: subtitleTextStyle,
                         ),
                       ),
@@ -105,7 +105,7 @@ class SignInPage extends StatelessWidget {
                 horizontal: 16,
               ),
               decoration: BoxDecoration(
-                color: backgroundColor2,
+                color: blackColor,
                 borderRadius: BorderRadius.circular(12),
               ),
               child: Center(
@@ -123,7 +123,7 @@ class SignInPage extends StatelessWidget {
                         style: primaryTextStyle,
                         obscureText: true,
                         decoration: InputDecoration.collapsed(
-                          hintText: 'Your Password',
+                          hintText: 'Masukkan Password',
                           hintStyle: subtitleTextStyle,
                         ),
                       ),
@@ -153,8 +153,8 @@ class SignInPage extends StatelessWidget {
             ),
           ),
           child: Text(
-            'Sign In',
-            style: primaryTextStyle.copyWith(
+            'Log In',
+            style: blackTextStyle.copyWith(
               fontSize: 16,
               fontWeight: medium,
             ),

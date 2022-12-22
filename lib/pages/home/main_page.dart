@@ -56,7 +56,7 @@ class _MainPageState extends State<MainPage> {
                 ),
                 child: Image.asset(
                   'assets/calendar.png',
-                  width: 20,
+                  width: 19,
                   color: currentIndex == 1 ? primaryColor : Color(0xff808191),
                 ),
               ),
@@ -70,7 +70,7 @@ class _MainPageState extends State<MainPage> {
                 ),
                 child: Image.asset(
                   'assets/trophy.png',
-                  width: 20,
+                  width: 22,
                   color: currentIndex == 2 ? primaryColor : Color(0xff808191),
                 ),
               ),
@@ -83,8 +83,8 @@ class _MainPageState extends State<MainPage> {
                   bottom: 10,
                 ),
                 child: Image.asset(
-                  'assets/doorbell.png',
-                  width: 20,
+                  'assets/list.png',
+                  width: 22,
                   color: currentIndex == 3 ? primaryColor : Color(0xff808191),
                 ),
               ),

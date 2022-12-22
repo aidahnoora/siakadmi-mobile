@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:siakad/theme.dart';
+import 'package:siakad/widgets/detail_nilai_widget.dart';
 
-class NilaiPage extends StatelessWidget {
+class ScoreDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Widget header() {
@@ -9,7 +10,7 @@ class NilaiPage extends StatelessWidget {
         backgroundColor: backgroundColor1,
         centerTitle: true,
         title: Text(
-          'Nilai Siswa',
+          'Detail Nilai Siswa',
           style: primaryTextStyle.copyWith(
             fontSize: 18,
             fontWeight: medium,
@@ -22,62 +23,48 @@ class NilaiPage extends StatelessWidget {
 
     Widget content() {
       return Expanded(
-        child: Padding(
-          padding: EdgeInsets.all(
-            defaultMargin,
+        child: ListView(
+          padding: EdgeInsets.symmetric(
+            horizontal: defaultMargin,
           ),
-          child: ListView(
-            children: [
-              Card(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(8)
-                ),
-                elevation: 4,
-                child: ListTile(
-                  title: Container(
-                    alignment: Alignment.center,
-                    child: GestureDetector(
-                      onTap: () {
-                        Navigator.pushNamed(context, '/score-detail');
-                      },
-                      child: Text(
-                        'Matematika',
-                        style: primaryTextStyle.copyWith(
-                          fontSize: 16,
-                          fontWeight: semiBold,
+          children: [
+            Container(
+              margin: EdgeInsets.only(
+                top: defaultMargin,
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    children: [
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Jenis Nilai',
+                              style: primaryTextStyle.copyWith(
+                                fontWeight: semiBold,
+                              ),
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ],
                         ),
                       ),
-                    ),
-                  ),
-                  trailing: Icon(Icons.more_vert),
-                ),
-              ),
-              Card(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(8)
-                ),
-                elevation: 4,
-                child: ListTile(
-                  title: Container(
-                    alignment: Alignment.center,
-                    child: GestureDetector(
-                      onTap: () {
-                        Navigator.pushNamed(context, '/score-detail');
-                      },
-                      child: Text(
-                        'Bahasa Jawa',
+                      Text(
+                        'Nilai',
                         style: primaryTextStyle.copyWith(
-                          fontSize: 16,
                           fontWeight: semiBold,
                         ),
+                        overflow: TextOverflow.ellipsis,
                       ),
-                    ),
+                    ],
                   ),
-                  trailing: Icon(Icons.more_vert),
-                ),
+                  DetailNilai(),
+                ],
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       );
     }

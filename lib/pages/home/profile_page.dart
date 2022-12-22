@@ -4,13 +4,14 @@ import 'package:siakad/theme.dart';
 class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-
     Widget header() {
-      return AppBar(
-        backgroundColor: backgroundColor1,
-        automaticallyImplyLeading: false,
-        elevation: 0,
-        flexibleSpace: SafeArea(
+      return Container(
+        margin: EdgeInsets.only(
+          top: defaultMargin,
+          left: defaultMargin,
+          right: defaultMargin,
+        ),
+        child: SafeArea(
           child: Container(
             padding: EdgeInsets.all(
               defaultMargin,
@@ -60,11 +61,11 @@ class ProfilePage extends StatelessWidget {
               ],
             ),
           ),
-          ),
+        ),
       );
     }
 
-    Widget nameInput() {
+    Widget namaInput() {
       return Container(
         margin: EdgeInsets.only(
           top: 30
@@ -73,9 +74,10 @@ class ProfilePage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Name',
+              'Nama Lengkap',
               style: secondaryTextStyle.copyWith(
                 fontSize: 13,
+                fontWeight: semiBold,
               ),
             ),
             TextFormField(
@@ -95,7 +97,7 @@ class ProfilePage extends StatelessWidget {
       );
     }
 
-    Widget emailInput() {
+    Widget nisInput() {
       return Container(
         margin: EdgeInsets.only(
           top: 30
@@ -104,15 +106,16 @@ class ProfilePage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Email',
+              'NIS',
               style: secondaryTextStyle.copyWith(
                 fontSize: 13,
+                fontWeight: semiBold,
               ),
             ),
             TextFormField(
               style: primaryTextStyle,
               decoration: InputDecoration(
-                hintText: 'alex@alexkeinn.go',
+                hintText: '123456',
                 hintStyle: primaryTextStyle,
                 enabledBorder: UnderlineInputBorder(
                   borderSide: BorderSide(
@@ -127,25 +130,87 @@ class ProfilePage extends StatelessWidget {
     }
 
     Widget content() {
-      return Container(
-        width: double.infinity,
-        padding: EdgeInsets.symmetric(
-          horizontal: defaultMargin,
+      return Expanded(
+        child: Padding(
+          padding: EdgeInsets.all(
+            defaultMargin,
+          ),
+          child: Column(
+            children: [
+              namaInput(),
+              nisInput(),
+            ],
+          ),
         ),
-        child: Column(
-          children: [
-            nameInput(),
-            emailInput(),
+      );
+    }
+
+    Widget footer() {
+      return ClipRRect(
+        borderRadius: BorderRadius.vertical(
+          top: Radius.circular(20),
+        ),
+        child: BottomNavigationBar(
+          backgroundColor: backgroundColor4,
+          items: [
+            BottomNavigationBarItem(
+              icon: Container(
+                margin: EdgeInsets.only(
+                  top: 20,
+                  bottom: 10,
+                ),
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(context, '/home');
+                  },
+                  child: Image.asset(
+                    'assets/icon_home.png',
+                    width: 21,
+                  ),
+                ),
+              ),
+              label: '',
+            ),
+            BottomNavigationBarItem(
+              icon: Container(
+                margin: EdgeInsets.only(
+                  top: 20,
+                  bottom: 10,
+                ),
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(context, '/profile');
+                  },
+                  child: Image.asset(
+                    'assets/icon_profile.png',
+                    width: 18,
+                  ),
+                ),
+              ),
+              label: '',
+            ),
           ],
         ),
       );
     }
 
-    return Column(
-      children: [
-        header(),
-        content(),
-      ],
+    return Scaffold(
+      backgroundColor: backgroundColor1,
+      resizeToAvoidBottomInset: false,
+      body: SafeArea(
+        child: Container(
+          margin: EdgeInsets.symmetric(
+          horizontal: defaultMargin,
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            header(),
+            content(),
+            footer(),
+          ]),
+        )
+      ),
     );
   }
 }
