@@ -1,20 +1,16 @@
 class UserModel {
-  int id;
-  String name;
-  String email;
-  String username;
-  String foto;
-  String nis;
-  String token;
+  final int? id;
+  final String? name;
+  final String? email;
+  final int? siswaNis;
+  String? token;
 
   UserModel({
-    required this.id,
-    required this.name,
-    required this.email,
-    required this.username,
-    required this.foto,
-    required this.nis,
-    required this.token,
+    this.id,
+    this.name,
+    this.email,
+    this.siswaNis,
+    this.token,
   });
 
   factory UserModel.fromJson(Map<String, dynamic> json) {
@@ -22,9 +18,7 @@ class UserModel {
       id: json['id'],
       name: json['name'],
       email: json['email'],
-      username: json['username'],
-      foto: json['foto'],
-      nis: json['nis'],
+      siswaNis: json['siswa_nis'],
       token: json['token'],
     );
   }
@@ -34,9 +28,7 @@ class UserModel {
       'id' : id,
       'name' : name,
       'email' : email,
-      'username' : username,
-      'foto' : foto,
-      'nis' : nis,
+      'siswa_nis' : siswaNis,
       'token' : token,
     };
   }

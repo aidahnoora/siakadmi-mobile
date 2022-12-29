@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:siakad/models/user_model.dart';
+import 'package:siakad/providers/auth_provider.dart';
 import 'package:siakad/theme.dart';
 
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+
+    AuthProvider authProvider = Provider.of<AuthProvider>(context);
+    UserModel user = authProvider.user;
+
     Widget header() {
       return Container(
         margin: EdgeInsets.only(
@@ -18,14 +25,14 @@ class HomePage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Hallo, Alex',
+                    'Hallo, ${user.name}',
                     style: primaryTextStyle.copyWith(
                       fontSize: 24,
                       fontWeight: semiBold,
                     ),
                   ),
                   Text(
-                    '@alexkeinn',
+                    '${user.email}',
                     style: subtitleTextStyle.copyWith(
                       fontSize: 16,
                     ),

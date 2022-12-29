@@ -10,6 +10,7 @@ import 'package:siakad/pages/home/profile_page.dart';
 import 'package:siakad/pages/sign_in_page.dart';
 import 'package:siakad/pages/splash_page.dart';
 import 'package:siakad/providers/auth_provider.dart';
+import 'package:siakad/providers/jadwal_povider.dart';
 
 void main() => runApp(MyApp());
 
@@ -20,7 +21,10 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(
           create: (context) => AuthProvider(),
-        )
+        ),
+        ChangeNotifierProvider(
+          create: (context) => JadwalProvider(),
+        ),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:siakad/models/jadwal_model.dart';
 import 'package:siakad/theme.dart';
 
 class Jadwal extends StatelessWidget {
+  final JadwalModel jadwal;
+  Jadwal(this.jadwal);
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -15,7 +19,7 @@ class Jadwal extends StatelessWidget {
             alignment: Alignment.center,
             margin: EdgeInsets.only(top: 10),
             child: Text(
-              '07.00 - 09.00',
+              '${jadwal.jamMulai}',
               style: primaryTextStyle.copyWith(
                 fontSize: 14,
                 fontWeight: medium,
@@ -26,7 +30,7 @@ class Jadwal extends StatelessWidget {
             alignment: Alignment.center,
             margin: EdgeInsets.only(bottom: 10),
             child: Text(
-              'Matematika',
+              '${jadwal.mapel}',
               style: primaryTextStyle.copyWith(
                 fontSize: 16,
                 fontWeight: bold,

@@ -1,0 +1,5 @@
+auth_service : baseUrl = 'http://IP:8000/api';
+
+di terminal : masuk ke project
+	php artisan serve --host=192.168.2.45 --port=8000
+	php artisan serve --host=IP --port=8000

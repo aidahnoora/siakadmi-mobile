@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:siakad/providers/jadwal_povider.dart';
 import 'package:siakad/theme.dart';
 import 'package:siakad/widgets/jadwal_widget.dart';
 
 class JadwalPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+
+    JadwalProvider jadwalProvider = Provider.of<JadwalProvider>(context);
+
     Widget header() {
       return AppBar(
         backgroundColor: backgroundColor1,
@@ -169,10 +174,11 @@ class JadwalPage extends StatelessWidget {
             defaultMargin,
           ),
           child: ListView(
-            children: [
-              Jadwal(),
-              Jadwal(),
-            ],
+            children: jadwalProvider.jadwals
+            .map(
+              (jadwal) => Jadwal(jadwal),
+            )
+            .toList(),
           ),
         ),
       );

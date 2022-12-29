@@ -50,7 +50,7 @@ class _SignInPageState extends State<SignInPage> {
 
     Widget header() {
       return Container(
-        margin: EdgeInsets.only(top: 30),
+        margin: EdgeInsets.only(top: 70),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -117,7 +117,7 @@ class _SignInPageState extends State<SignInPage> {
                           hintStyle: subtitleTextStyle,
                         ),
                       ),
-                      ),
+                    ),
                   ],
                 ),
               ),
@@ -212,17 +212,18 @@ class _SignInPageState extends State<SignInPage> {
       body: SafeArea(
         child: Container(
           margin: EdgeInsets.symmetric(
-          horizontal: defaultMargin,
+            horizontal: defaultMargin,
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              header(),
+              emailInput(),
+              passwordInput(),
+              isLoading ? LoadingButton() : signInButton(),
+            ],
+          ),
         ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            header(),
-            emailInput(),
-            passwordInput(),
-            isLoading ? LoadingButton() : signInButton(),
-          ]),
-        )
       ),
     );
   }
