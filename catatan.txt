@@ -1,5 +1,7 @@
-auth_service : baseUrl = 'http://IP:8000/api';
+di folder service, rubah semua IP di file service : 
+	baseUrl = 'http://IP:8000/api';
+	*ganti ip local (ipconfig)
 
 di terminal : masuk ke project
-	php artisan serve --host=192.168.2.45 --port=8000
 	php artisan serve --host=IP --port=8000
+	*ganti ip local (ipconfig)
