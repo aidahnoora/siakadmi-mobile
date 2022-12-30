@@ -10,8 +10,10 @@ import 'package:siakad/pages/home/nilai_page.dart';
 import 'package:siakad/pages/home/profile_page.dart';
 import 'package:siakad/pages/sign_in_page.dart';
 import 'package:siakad/pages/splash_page.dart';
+import 'package:siakad/providers/absensi_provider.dart';
 import 'package:siakad/providers/auth_provider.dart';
 import 'package:siakad/providers/jadwal_povider.dart';
+import 'package:siakad/providers/nilai_provider.dart';
 
 void main() => runApp(MyApp());
 
@@ -27,13 +29,18 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(
           create: (context) => JadwalProvider(),
         ),
+        ChangeNotifierProvider(
+          create: (context) => AbsensiProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => NilaiProvider(),
+        ),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         routes: {
           '/': (context) => SplashPage(),
           '/sign-in': (context) => SignInPage(),
-          // '/home': (context) => MainPage(),
           '/home': (context) => HomePage(),
           '/schedule': (context) => JadwalPage(),
           '/score': (context) => NilaiPage(),

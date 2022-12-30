@@ -115,7 +115,7 @@ class HomePage extends StatelessWidget {
                       ),
                       child: GestureDetector(
                         onTap: () {
-                          Navigator.pushNamed(context, '/score');
+                          Navigator.pushNamed(context, '/score-detail');
                         },
                         child: Image.asset(
                           'assets/books.png',

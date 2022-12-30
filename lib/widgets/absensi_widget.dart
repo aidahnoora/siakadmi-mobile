@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:siakad/models/absensi_model.dart';
 import 'package:siakad/theme.dart';
 
 class Absensi extends StatelessWidget {
+  final AbsensiModel absensi;
+  Absensi(this.absensi);
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -24,7 +28,7 @@ class Absensi extends StatelessWidget {
                   width: 12,
                 ),
                 Text(
-                  'Senin',
+                  absensi.tanggal,
                   style: blackTextStyle.copyWith(
                     fontWeight: medium,
                   ),
@@ -34,7 +38,7 @@ class Absensi extends StatelessWidget {
             ),
           ),
           Text(
-            'Izin',
+            absensi.keterangan,
             style: blackTextStyle.copyWith(
               fontSize: 12,
             ),

@@ -8,7 +8,7 @@ import 'package:siakad/models/jadwal_model.dart';
 import 'package:http/http.dart' as http;
 
 class JadwalService {
-  String baseUrl = 'http://${Constants.IP_ADDRESS}:8000/api';
+  String baseUrl = 'http://192.168.2.37:8000/api';
   final storage = new FlutterSecureStorage();
 
   Future<List<JadwalModel>> getJadwals() async {

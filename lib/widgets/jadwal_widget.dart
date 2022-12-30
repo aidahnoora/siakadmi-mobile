@@ -15,6 +15,13 @@ class Jadwal extends StatelessWidget {
         ),
         elevation: 4,
         child: ListTile(
+          leading: Text(
+              jadwal.hari,
+              style: primaryTextStyle.copyWith(
+                fontSize: 16,
+                fontWeight: bold,
+            ),
+          ),
           title: Container(
             alignment: Alignment.center,
             margin: EdgeInsets.only(top: 10),
@@ -26,24 +33,23 @@ class Jadwal extends StatelessWidget {
               ),
             ),
           ),
-          subtitle: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                jadwal.jamMulai,
-                style: primaryTextStyle.copyWith(
-                  fontSize: 16,
-                  fontWeight: bold,
+          subtitle: Container(
+            alignment: Alignment.center,
+            margin: EdgeInsets.all(
+              10,
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  '${jadwal.jamMulai} - ${jadwal.jamSelesai}',
+                  style: primaryTextStyle.copyWith(
+                    fontSize: 15,
+                    fontWeight: bold,
+                  ),
                 ),
-              ),
-              Text(
-                jadwal.jamSelesai,
-                style: primaryTextStyle.copyWith(
-                  fontSize: 16,
-                  fontWeight: bold,
-                ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:siakad/pages/home/nilai_page.dart';
+import 'package:siakad/providers/nilai_provider.dart';
 import 'package:siakad/theme.dart';
 import 'package:siakad/widgets/detail_nilai_widget.dart';
 
 class ScoreDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    NilaiProvider nilaiProvider = Provider.of<NilaiProvider>(context, listen: true);
+    nilaiProvider.getNilais();
+
     Widget header() {
       return AppBar(
         backgroundColor: backgroundColor1,
@@ -28,31 +34,14 @@ class ScoreDetailPage extends StatelessWidget {
             horizontal: defaultMargin,
           ),
           children: [
-            Container(
-              margin: EdgeInsets.only(
-                top: defaultMargin,
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
+            Row(
+              children: [
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Jenis Nilai',
-                              style: primaryTextStyle.copyWith(
-                                fontWeight: semiBold,
-                              ),
-                              overflow: TextOverflow.ellipsis,
-                            ),
-                          ],
-                        ),
-                      ),
                       Text(
-                        'Nilai',
+                        'Jenis Nilai',
                         style: primaryTextStyle.copyWith(
                           fontWeight: semiBold,
                         ),
@@ -60,8 +49,24 @@ class ScoreDetailPage extends StatelessWidget {
                       ),
                     ],
                   ),
-                  DetailNilai(),
-                ],
+                ),
+                Text(
+                  'Nilai',
+                  style: primaryTextStyle.copyWith(
+                    fontWeight: semiBold,
+                  ),
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ],
+            ),
+            Container(
+              child: Column(
+                // crossAxisAlignment: CrossAxisAlignment.start,
+                children: nilaiProvider.nilais
+                  .map(
+                    (nilai) => DetailNilai(nilai),
+                  )
+                  .toList(),
               ),
             ),
           ],

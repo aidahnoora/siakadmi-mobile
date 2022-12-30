@@ -39,24 +39,108 @@ class JadwalPage extends StatelessWidget {
               SizedBox(
                 width: defaultMargin,
               ),
-              Container(
-                padding: EdgeInsets.symmetric(
-                  horizontal: 12,
-                  vertical: 10,
-                ),
-                margin: EdgeInsets.only(right: 16),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
-                  color: primaryColor,
-                ),
-                child: Text(
-                  'Senin',
-                  style: primaryTextStyle.copyWith(
-                    fontSize: 13,
-                    fontWeight: medium,
-                  ),
-                ),
-              ),
+              // Container(
+              //   padding: EdgeInsets.symmetric(
+              //     horizontal: 12,
+              //     vertical: 10,
+              //   ),
+              //   margin: EdgeInsets.only(right: 16),
+              //   decoration: BoxDecoration(
+              //     borderRadius: BorderRadius.circular(12),
+              //     color: primaryColor,
+              //   ),
+              //   child: Text(
+              //     'Senin',
+              //     style: primaryTextStyle.copyWith(
+              //       fontSize: 13,
+              //       fontWeight: medium,
+              //     ),
+              //   ),
+              // ),
+              // Container(
+              //   padding: EdgeInsets.symmetric(
+              //     horizontal: 12,
+              //     vertical: 10,
+              //   ),
+              //   margin: EdgeInsets.only(right: 16),
+              //   decoration: BoxDecoration(
+              //     borderRadius: BorderRadius.circular(12),
+              //     border: Border.all(
+              //       color: subtitleColor,
+              //     ),
+              //     color: transparentColor,
+              //   ),
+              //   child: Text(
+              //     'Selasa',
+              //     style: subtitleTextStyle.copyWith(
+              //       fontSize: 13,
+              //       fontWeight: medium,
+              //     ),
+              //   ),
+              // ),
+              // Container(
+              //   padding: EdgeInsets.symmetric(
+              //     horizontal: 12,
+              //     vertical: 10,
+              //   ),
+              //   margin: EdgeInsets.only(right: 16),
+              //   decoration: BoxDecoration(
+              //     borderRadius: BorderRadius.circular(12),
+              //     border: Border.all(
+              //       color: subtitleColor,
+              //     ),
+              //     color: transparentColor,
+              //   ),
+              //   child: Text(
+              //     'Rabu',
+              //     style: subtitleTextStyle.copyWith(
+              //       fontSize: 13,
+              //       fontWeight: medium,
+              //     ),
+              //   ),
+              // ),
+              // Container(
+              //   padding: EdgeInsets.symmetric(
+              //     horizontal: 12,
+              //     vertical: 10,
+              //   ),
+              //   margin: EdgeInsets.only(right: 16),
+              //   decoration: BoxDecoration(
+              //     borderRadius: BorderRadius.circular(12),
+              //     border: Border.all(
+              //       color: subtitleColor,
+              //     ),
+              //     color: transparentColor,
+              //   ),
+              //   child: Text(
+              //     'Kamis',
+              //     style: subtitleTextStyle.copyWith(
+              //       fontSize: 13,
+              //       fontWeight: medium,
+              //     ),
+              //   ),
+              // ),
+              // Container(
+              //   padding: EdgeInsets.symmetric(
+              //     horizontal: 12,
+              //     vertical: 10,
+              //   ),
+              //   margin: EdgeInsets.only(right: 16),
+              //   decoration: BoxDecoration(
+              //     borderRadius: BorderRadius.circular(12),
+              //     border: Border.all(
+              //       color: subtitleColor,
+              //     ),
+              //     color: transparentColor,
+              //   ),
+              //   child: Text(
+              //     'Jumat',
+              //     style: subtitleTextStyle.copyWith(
+              //       fontSize: 13,
+              //       fontWeight: medium,
+              //     ),
+              //   ),
+              // ),
               Container(
                 padding: EdgeInsets.symmetric(
                   horizontal: 12,
@@ -71,91 +155,7 @@ class JadwalPage extends StatelessWidget {
                   color: transparentColor,
                 ),
                 child: Text(
-                  'Selasa',
-                  style: subtitleTextStyle.copyWith(
-                    fontSize: 13,
-                    fontWeight: medium,
-                  ),
-                ),
-              ),
-              Container(
-                padding: EdgeInsets.symmetric(
-                  horizontal: 12,
-                  vertical: 10,
-                ),
-                margin: EdgeInsets.only(right: 16),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
-                  border: Border.all(
-                    color: subtitleColor,
-                  ),
-                  color: transparentColor,
-                ),
-                child: Text(
-                  'Rabu',
-                  style: subtitleTextStyle.copyWith(
-                    fontSize: 13,
-                    fontWeight: medium,
-                  ),
-                ),
-              ),
-              Container(
-                padding: EdgeInsets.symmetric(
-                  horizontal: 12,
-                  vertical: 10,
-                ),
-                margin: EdgeInsets.only(right: 16),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
-                  border: Border.all(
-                    color: subtitleColor,
-                  ),
-                  color: transparentColor,
-                ),
-                child: Text(
-                  'Kamis',
-                  style: subtitleTextStyle.copyWith(
-                    fontSize: 13,
-                    fontWeight: medium,
-                  ),
-                ),
-              ),
-              Container(
-                padding: EdgeInsets.symmetric(
-                  horizontal: 12,
-                  vertical: 10,
-                ),
-                margin: EdgeInsets.only(right: 16),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
-                  border: Border.all(
-                    color: subtitleColor,
-                  ),
-                  color: transparentColor,
-                ),
-                child: Text(
-                  'Jumat',
-                  style: subtitleTextStyle.copyWith(
-                    fontSize: 13,
-                    fontWeight: medium,
-                  ),
-                ),
-              ),
-              Container(
-                padding: EdgeInsets.symmetric(
-                  horizontal: 12,
-                  vertical: 10,
-                ),
-                margin: EdgeInsets.only(right: 16),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
-                  border: Border.all(
-                    color: subtitleColor,
-                  ),
-                  color: transparentColor,
-                ),
-                child: Text(
-                  'Sabtu',
+                  'Senin - Sabtu',
                   style: subtitleTextStyle.copyWith(
                     fontSize: 13,
                     fontWeight: medium,

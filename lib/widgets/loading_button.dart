@@ -9,7 +9,7 @@ class LoadingButton extends StatelessWidget {
     return Container(
       height: 50,
       width: double.infinity,
-      margin: const EdgeInsets.only(top: 30),
+      margin: const EdgeInsets.only(top: 70),
       child: TextButton(
         onPressed: () {},
         style: TextButton.styleFrom(

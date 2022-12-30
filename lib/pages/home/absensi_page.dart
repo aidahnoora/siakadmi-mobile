@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:siakad/providers/absensi_provider.dart';
 import 'package:siakad/theme.dart';
 import 'package:siakad/widgets/absensi_widget.dart';
 
 class AbsensiPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    AbsensiProvider absensiProvider = Provider.of<AbsensiProvider>(context, listen: true);
+    absensiProvider.getAbsensis();
+    
     Widget header() {
       return AppBar(
         backgroundColor: backgroundColor1,
@@ -151,28 +156,14 @@ class AbsensiPage extends StatelessWidget {
             horizontal: defaultMargin,
           ),
           children: [
-            Container(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
+            Row(
+              children: [
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Hari',
-                              style: primaryTextStyle.copyWith(
-                                fontWeight: semiBold,
-                              ),
-                              overflow: TextOverflow.ellipsis,
-                            ),
-                          ],
-                        ),
-                      ),
                       Text(
-                        'Keterangan',
+                        'Hari',
                         style: primaryTextStyle.copyWith(
                           fontWeight: semiBold,
                         ),
@@ -180,9 +171,23 @@ class AbsensiPage extends StatelessWidget {
                       ),
                     ],
                   ),
-                  Absensi(),
-                  Absensi(),
-                ],
+                ),
+                Text(
+                  'Keterangan',
+                  style: primaryTextStyle.copyWith(
+                    fontWeight: semiBold,
+                  ),
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ],
+            ),
+            Container(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: absensiProvider.absensis
+                  .map((absensi) => Absensi(absensi),
+                  )
+                  .toList(),
               ),
             ),
           ],
@@ -251,7 +256,7 @@ class AbsensiPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             header(),
-            content(),
+            // content(),
             listAbsensi(),
             footer(),
           ]),
