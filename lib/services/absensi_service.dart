@@ -1,10 +1,11 @@
 import 'dart:convert';
 
+import 'package:siakad/constants.dart';
 import 'package:siakad/models/absensi_model.dart';
 import 'package:http/http.dart' as http;
 
 class AbsensiService {
-  String baseUrl = 'http://192.168.0.103:8000/api';
+  String baseUrl = 'http://${Constants.IP_ADDRESS}:8000/api';
 
   Future<List<AbsensiModel>> getAbsensis() async {
     var url = '$baseUrl/absensi-siswa';
@@ -13,7 +14,7 @@ class AbsensiService {
 
     print(response.body);
 
-    if(response.statusCode == 200) {
+    if (response.statusCode == 200) {
       List data = jsonDecode(response.body)['data']['data'];
       List<AbsensiModel> absensis = [];
 

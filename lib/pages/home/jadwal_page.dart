@@ -7,8 +7,9 @@ import 'package:siakad/widgets/jadwal_widget.dart';
 class JadwalPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-
-    JadwalProvider jadwalProvider = Provider.of<JadwalProvider>(context);
+    JadwalProvider jadwalProvider =
+        Provider.of<JadwalProvider>(context, listen: true);
+    jadwalProvider.getJadwals();
 
     Widget header() {
       return AppBar(
@@ -166,7 +167,7 @@ class JadwalPage extends StatelessWidget {
         ),
       );
     }
-    
+
     Widget content() {
       return Expanded(
         child: Padding(
@@ -175,10 +176,10 @@ class JadwalPage extends StatelessWidget {
           ),
           child: ListView(
             children: jadwalProvider.jadwals
-            .map(
-              (jadwal) => Jadwal(jadwal),
-            )
-            .toList(),
+                .map(
+                  (jadwal) => Jadwal(jadwal),
+                )
+                .toList(),
           ),
         ),
       );
@@ -239,11 +240,10 @@ class JadwalPage extends StatelessWidget {
       body: SafeArea(
         child: Container(
           margin: EdgeInsets.symmetric(
-          horizontal: defaultMargin,
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
+            horizontal: defaultMargin,
+          ),
+          child:
+              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             header(),
             button(),
             content(),

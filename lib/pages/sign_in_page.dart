@@ -10,7 +10,6 @@ class SignInPage extends StatefulWidget {
 }
 
 class _SignInPageState extends State<SignInPage> {
-
   TextEditingController emailController = TextEditingController(text: '');
   TextEditingController passwordController = TextEditingController(text: '');
 
@@ -18,7 +17,6 @@ class _SignInPageState extends State<SignInPage> {
 
   @override
   Widget build(BuildContext context) {
-
     AuthProvider authProvider = Provider.of<AuthProvider>(context);
 
     handleSignIn() async {
@@ -35,7 +33,7 @@ class _SignInPageState extends State<SignInPage> {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             backgroundColor: alertColor,
-            content: Text(
+            content: const Text(
               'Gagal Login!',
               textAlign: TextAlign.center,
             ),
@@ -181,7 +179,7 @@ class _SignInPageState extends State<SignInPage> {
         ),
       );
     }
-    
+
     Widget signInButton() {
       return Container(
         height: 50,

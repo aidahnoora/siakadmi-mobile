@@ -1,10 +1,13 @@
 import 'dart:convert';
 
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'package:siakad/constants.dart';
 import 'package:siakad/models/user_model.dart';
 import 'package:http/http.dart' as http;
 
 class AuthService {
-  String baseUrl = 'http://192.168.2.37:8000/api';
+  String baseUrl = 'http://${Constants.IP_ADDRESS}:8000/api';
+  final storage = new FlutterSecureStorage();
 
   Future<UserModel> login({
     String? email,
@@ -29,7 +32,11 @@ class AuthService {
       var data = jsonDecode(response.body)['data'];
       UserModel user = UserModel.fromJson(data['user']);
       user.token = 'Bearer ' + data['access_token'];
-
+      await storage.write(key: 'token', value: data['access_token']);
+      await storage.write(key: 'user_name', value: data['name']);
+      await storage.write(key: 'user_email', value: data['email']);
+      await storage.write(key: 'user_nis', value: data['nis']);
+      await storage.write(key: 'login_status', value: 'true');
       return user;
     } else {
       throw Exception('Gagal Login');

@@ -1,3 +1,5 @@
+// ignore_for_file: use_key_in_widget_constructors
+
 import 'package:flutter/material.dart';
 import 'package:siakad/theme.dart';
 
@@ -7,7 +9,7 @@ class LoadingButton extends StatelessWidget {
     return Container(
       height: 50,
       width: double.infinity,
-      margin: EdgeInsets.only(top: 30),
+      margin: const EdgeInsets.only(top: 30),
       child: TextButton(
         onPressed: () {},
         style: TextButton.styleFrom(
@@ -19,7 +21,7 @@ class LoadingButton extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Container(
+            SizedBox(
               width: 16,
               height: 16,
               child: CircularProgressIndicator(
@@ -29,7 +31,7 @@ class LoadingButton extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               width: 4,
             ),
             Text(

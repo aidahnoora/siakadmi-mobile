@@ -19,23 +19,31 @@ class Jadwal extends StatelessWidget {
             alignment: Alignment.center,
             margin: EdgeInsets.only(top: 10),
             child: Text(
-              '${jadwal.jamMulai}',
+              jadwal.mapel,
               style: primaryTextStyle.copyWith(
                 fontSize: 14,
                 fontWeight: medium,
               ),
             ),
           ),
-          subtitle: Container(
-            alignment: Alignment.center,
-            margin: EdgeInsets.only(bottom: 10),
-            child: Text(
-              '${jadwal.mapel}',
-              style: primaryTextStyle.copyWith(
-                fontSize: 16,
-                fontWeight: bold,
+          subtitle: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                jadwal.jamMulai,
+                style: primaryTextStyle.copyWith(
+                  fontSize: 16,
+                  fontWeight: bold,
+                ),
               ),
-            ),
+              Text(
+                jadwal.jamSelesai,
+                style: primaryTextStyle.copyWith(
+                  fontSize: 16,
+                  fontWeight: bold,
+                ),
+              ),
+            ],
           ),
         ),
       ),

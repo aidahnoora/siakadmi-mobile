@@ -9,13 +9,27 @@ class SplashPage extends StatefulWidget {
 }
 
 class _SplashPageState extends State<SplashPage> {
-  
   @override
   void initState() {
     Timer(
       Duration(seconds: 3),
       () => Navigator.pushNamed(context, '/sign-in'),
     );
+
+    //   goto() async {
+    //   String? login_status = await storage.read(key: 'login_status');
+    //   if (login_status == 'true') {
+    //     Timer(
+    //       Duration(seconds: 3),
+    //       () => Navigator.pushNamed(context, '/home'),
+    //     );
+    //   } else {
+    //     Timer(
+    //       Duration(seconds: 3),
+    //       () => Navigator.pushNamed(context, '/sign-in'),
+    //     );
+    //   }
+    // }
 
     super.initState();
   }
@@ -29,10 +43,8 @@ class _SplashPageState extends State<SplashPage> {
           width: 130,
           height: 150,
           decoration: BoxDecoration(
-            image: DecorationImage(image: AssetImage(
-              'assets/image_splash.png')
-              )
-          ),
+              image: DecorationImage(
+                  image: AssetImage('assets/image_splash.png'))),
         ),
       ),
     );
